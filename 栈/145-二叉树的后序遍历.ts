@@ -1,3 +1,4 @@
+export {}
 class TreeNode {
   val: number
   left: TreeNode | null
@@ -32,7 +33,7 @@ function postorderTraversal(root: TreeNode | null): number[] {
   const nodeStack: TreeNode[] = [root], actionStack: Array<0 | 1 | 2> = [0]
   let action = 0, node = root
   while (nodeStack.length) {
-    action = actionStack.pop()
+    action = actionStack.pop() as number
     node = nodeStack[nodeStack.length - 1]
     switch (action) {
       case 0:
@@ -50,7 +51,7 @@ function postorderTraversal(root: TreeNode | null): number[] {
         }
         break
       case 2:
-        ans.push(nodeStack.pop().val)
+        ans.push(nodeStack.pop()!.val)
     }
   }
   return ans
