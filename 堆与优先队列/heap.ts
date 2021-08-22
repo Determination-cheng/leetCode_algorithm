@@ -29,7 +29,7 @@ class Heap {
     if (!this.heap.length) return null
     if (this.heap.length === 1) return this.heap.pop()
     const res = this.heap[0]
-    this.heap[0] = this.heap.pop()
+    this.heap[0] = this.heap.pop() as number
     this.sortDown(0)
     return res
   }
@@ -75,3 +75,5 @@ class Heap {
     [this.heap[i], this.heap[j]] = [this.heap[j], this.heap[i]]
   }
 }
+
+export {}
