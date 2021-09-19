@@ -35,7 +35,7 @@ class Heap {
     if (!this.data.length) return null
     if (this.data.length === 1) return this.data.pop()
     const res = this.data[0]
-    this.data[0] = this.data.pop()
+    this.data[0] = this.data.pop() as number
     this.sortDown(0)
     return res
   }
@@ -98,5 +98,7 @@ function findKthLargest(nums: number[], k: number): number {
   for (let i = 0; i < nums.length - k; i++) {
     numsHeap.pop()
   }
-  return numsHeap.peek()
+  return numsHeap.peek() as number
 }
+
+export {}

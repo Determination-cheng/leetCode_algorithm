@@ -18,10 +18,10 @@ function calculate(s: string): number {
           numStack.push(-num)
           break
         case '*':
-          numStack.push(numStack.pop() * num)
+          numStack.push(numStack.pop() as number * num)
           break
         case '/':
-          numStack.push(numStack.pop() / num | 0)
+          numStack.push(numStack.pop() as number / num | 0)
       }
       op = c
       num = 0
