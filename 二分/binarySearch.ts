@@ -14,7 +14,9 @@ function binarySearch (nums: number[], target: number) {
 function s_binarySearch (nums: number[], target: number) {
     let h = 0, t = nums.length - 1, mid: number
     while (h < t) {
-        mid = ((h + t) >> 1) + 1
+        mid = ((h + t) >> 1) + 1    // 均向右偏一位
+        // mid = h + ((t - h) >> 1) + 1 // 均向右偏一位
+        // mid = parseInt(`${(h + t + 1) / 2}`)  // 奇数时在正中间，偶数时在中间偏右
         if (nums[mid] <= target) h = mid
         else t = mid - 1
     }
